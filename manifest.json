@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Launcher",
+  "description": "Quick launch ET",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/load/chart.js"]
+    }
+  ]
+}
