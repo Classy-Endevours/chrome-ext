@@ -1,12 +1,34 @@
 {
   "manifest_version": 2,
-  "name": "Launcher",
-  "description": "Quick launch ET",
-  "version": "1.0.0",
+
+  "name": "Gmail inject pop-up",
+  "description": "This extension will append an icon in the gmail homepage and a pop-up will appear on click over that icon.",
+  "version": "1.0",
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "activeTab",
+    "storage",
+    "webNavigation",
+    "unlimitedStorage",
+    "notifications",
+    "clipboardWrite",
+    "downloads",
+    "tabCapture",
+    "cookies",
+    "browsingData",
+    "webRequest",
+    "*://*/*",
+    "gcm",
+    "contextMenus",
+    "management"
+  ],
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_end",
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
       "js": ["js/load/chart.js"]
     }
-  ]
+  ],
+  "web_accessible_resources": ["img/*.png", "js/**/*"]
 }
