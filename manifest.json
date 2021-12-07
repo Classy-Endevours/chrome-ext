@@ -1,34 +1,21 @@
 {
   "manifest_version": 2,
 
-  "name": "Gmail inject pop-up",
-  "description": "This extension will append an icon in the gmail homepage and a pop-up will appear on click over that icon.",
+  "name": "Inject script and chart",
+  "description": "This extension will eject new script tag into dom",
   "version": "1.0",
-  "permissions": [
-    "<all_urls>",
-    "tabs",
-    "activeTab",
-    "storage",
-    "webNavigation",
-    "unlimitedStorage",
-    "notifications",
-    "clipboardWrite",
-    "downloads",
-    "tabCapture",
-    "cookies",
-    "browsingData",
-    "webRequest",
-    "*://*/*",
-    "gcm",
-    "contextMenus",
-    "management"
-  ],
   "content_scripts": [
     {
       "run_at": "document_end",
-      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
-      "js": ["js/load/chart.js"]
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["lib/jquery.js", "js/load/chart.js", "js/load/popover.js"]
     }
   ],
-  "web_accessible_resources": ["img/*.png", "js/**/*"]
+  "web_accessible_resources": [
+    "img/*.png",
+    "js/**/*",
+    "html/*",
+    "css/*",
+    "lib/jquery.js"
+  ]
 }
