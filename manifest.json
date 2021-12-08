@@ -7,8 +7,8 @@
   "content_scripts": [
     {
       "run_at": "document_end",
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["lib/jquery.js", "js/load/chart.js", "js/load/popover.js"]
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["js/load/test.js"]
     }
   ],
   "web_accessible_resources": [
